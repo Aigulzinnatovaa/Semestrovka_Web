@@ -1,0 +1,104 @@
+.header_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input_line {
+    width: 100%;
+    height: 100%;
+}
+
+.default_input {
+    margin: 0;
+    height: 100%;
+    border: 1px solid rgba(118,121,127,0.3);
+    font-weight: 400;
+    font-size: .875rem;
+    font-family: Inter,sans-serif;
+    outline: none;
+    padding: 0 calc(15% + 38px) 0 16px;
+    background-color: #fff;
+    vertical-align: top;
+    box-shadow: 0 0 0 0 rgb(0 0 0 / 20%), 0 0 0 0 rgb(0 0 0 / 8%);
+    transition: box-shadow .2s ease;
+    border-radius: 4px;
+}
+
+.button_name {
+    font-weight: 500;
+    text-align: center;
+}
+
+.button_search_ripple {
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    opacity: 0.3;
+    border-radius: 50%;
+    transform: scale(0);
+}
+
+.magnifying_glass {
+    width: 40px;
+    height: 40px;
+}
+
+.search_form {
+    position: relative;
+    display: flex;
+}
+
+.store_action_buttons {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875rem;
+    position: relative;
+}
+
+.action_button_auth {
+    margin: 8px;
+    padding: 0 8px;
+}
+
+.noselect {
+    user-select: none;
+}
+
+.catalog_track {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.action_button_exit, .action_button_profil, .action_button_auth, .action_button_favourites, .action_button_reg {
+    text-decoration: none;
+}
+
+.action_button_exit_text, .action_button_profil_text, .action_button_favourites_text, .action_button_auth_text, .action_button_reg_text {
+    display: flex;
+    margin-right: 14px;
+    padding: 5px;
+    /*flex-direction: row;*/
+    border-radius: 10%;
+    /*width: 70px;*/
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    font: 700 14px "Museo Sans Cyrl 700",sans-serif;
+    background-color: #F3F3F7;
+    color: #5c6370;
+}
+
+.popl {
+    display: flex;
+    flex-direction: row;
+}
+
+.link {
+    text-decoration: none;
+    color: #203842;
+    font: 700 16px "Museo Sans Cyrl 700",sans-serif;
+}

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="main_12">
+        <form method="post" class="post_1">
+                <div class="content_1">
+                    <h1>Регистрация</h1>
+                    <div class="field_1">
+                        <label class="surname">
+                            <b>Фамилия</b>
+                        </label>
+                        <input type="text" class="text_2" placeholder="введите фамилию" name="surname" value="" required>
+                    </div>
+                    <br>
+                    <div class="field_1">
+                        <label class="name">
+                            <b>Имя</b>
+                        </label>
+                        <input type="text" class="text_2" placeholder="введите имя" name="name" value="" required>
+                    </div>
+                    <br>
+                    <div class="field_1">
+                        <label class="patronymic">
+                            <b>Отчество (при наличии)</b>
+                        </label>
+                        <input type="text" class="text_2" placeholder="введите отчество" name="patronymic" value="">
+                    </div>
+                    <br>
+                    <div class="field_1">
+                        <label class="birthday">
+                            <b>Дата рождения</b>
+                        </label>
+                        <input type="date" class="text_2" name="birthday" value="" required>
+                    </div>
+                    <br>
+                    <div class="field_1">
+                        <label class="floor_1">
+                            <b>Пол</b>
+                        </label>
+                        <input type="radio" name="floor" value="male">
+                        <label class="female">мужской</label>
+                        <input type="radio" name="floor" value="female">
+                        <label class="female">женский</label>
+                        <input type="radio" name="floor" value="xz">
+                        <label class="xz">не определился</label>
+                    </div>
+                    <br>
+                    <div class="field_1">
+                        <label class="email">
+                            <b>Почта</b>
+                        </label>
+                        <input type="email" class="text_2" placeholder="введите почту" id="email" name="email" value="">
+                    </div>
+                    <br>
+                    <div class="field_1">
+                        <label class="phone">
+                            <b>Номер телефона</b>
+                        </label>
+                        <input type="tel" class="text_2" placeholder="введите номер телефона" id="phone" name="phone" value="">
+                    </div>
+                    <br>
+                    <div class="field_1">
+                        <label class="password">
+                            <b>Пароль</b>
+                        </label>
+                        <input type="password" class="text_2" placeholder="введите пароль" id="password" name="password" value="">
+                    </div>
+                    <br>
+                    <div class="field_1">
+                        <label class="password_1">
+                            <b>Пароль ещё раз</b>
+                        </label>
+                        <input type="password" class="text_2" placeholder="введите пароль еще раз" id="repeat_password" name="repeat_password" value="">
+                    </div>
+                    <br>
+                    <button type="submit" class="registration_button">
+                        Отправить
+                    </button>
+                </div>
+                <br>
+                <hr>
+                <div class="sign_registration">
+                    <p>Вы уже зарегистрированы?</p>
+                    <button>
+                        <a href="/login/" style="text-decoration: none; color: #203842">Войти</a>
+                    </button>
+                </div>
+            </form>
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
+    </div>
+{% endblock %}

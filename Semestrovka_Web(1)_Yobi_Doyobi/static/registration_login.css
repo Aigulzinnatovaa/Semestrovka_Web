@@ -1,0 +1,41 @@
+.field_1 {
+    clear: both;
+    text-align: left;
+    line-height: 25px;
+}
+
+.text_2 {
+    display: flex;
+    float: right;
+    margin-left: 4px;
+}
+
+.login_button_1 {
+    display: flex;
+    justify-content: center;
+}
+
+.main_12 {
+    display: flex;
+    justify-content: center;
+}
+
+.post_1, .sign_registration, h1 {
+    display: block;
+    text-align: center;
+}
+
+.kek {
+    display: flex;
+    flex-direction: row;
+    float: right;
+}
+
+* {
+    font-family: "Museo Sans Cyrl 700",sans-serif;
+}
+
+.header_footer {
+    display: flex;
+    flex-direction: row;
+}

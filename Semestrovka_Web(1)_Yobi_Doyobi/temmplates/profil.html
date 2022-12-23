@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block body %}
+    <br>
+    <div style="margin-left: 38%">
+        <h1>Личный кабинет</h1>
+    </div>
+    <form method="post" class="post_23">
+        <div class="main">
+            <div class="content_1">
+                <div class="kek">
+                    <div class="field">Фамилия:</div>
+                    <div class="text_1">{{ user[0].surname }}</div>
+                </div>
+                <br>
+                <div class="kek">
+                    <div class="field">Имя:</div>
+                    <div class="text_1">{{ user[0].name }}</div>
+                </div>
+                <br>
+                <div class="kek">
+                    <div class="field">Отчество: </div>
+                    <div class="text_1">{{ user[0].patronymic }}</div>
+                </div>
+                <br>
+                <div class="kek">
+                    <div class="field">Дата рождения: </div>
+                    <div class="text_1">{{ user[0].birthday }}</div>
+                </div>
+                <br>
+                <div class="kek">
+                    <div class="field">Email: </div>
+                    <div class="text_1">{{ user[0].email }}</div>
+                </div>
+                <br>
+                <div class="kek">
+                    <div class="field">Пол:</div>
+                    <div class="text_1">{{ user[0].floor }}</div>
+                </div>
+                <br>
+                <div class="kek">
+                    <div class="field">Номер телефона: </div>
+                    <div class="text_1">{{ user[0].phone }}</div>
+                </div>
+                <br>
+                <div class="kek">
+                    <div class="field">Адрес: </div>
+                    <div class="text_1">{{ user[0].adres }}</div>
+                </div>
+            </div>
+        </div>
+    <br>
+        <hr>
+        <h2>Заказы:</h2>
+        <div class="orders">
+        {% for j in range(lol) %}
+            <div class="kek">
+                <div class="field">Номер заказа:</div>
+                <div class="text_1">{{ order_num[j] }}</div>
+            </div>
+            <div class="field">Список товаров:</div>
+            {% for i in range(tk[j]) %}
+                <div class="text_1">{{ orders[i].product_name }}</>
+            {% endfor %}
+            <div class="kek">
+                <div class="field">Стоимость заказа: </div>
+                <div class="text_1">{{ orders[j].cost }}</div>
+            </div>
+            <br>
+        {% endfor %}
+
+        <button type="submit" class="button_redactor_profil" style="margin-left: 9%">
+            Редактировать профиль
+        </button>
+    </form>
+{% endblock %}
+
+{#<html>#}
+{#<head>#}
+{#    <meta charset="utf-8">#}
+{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">#}
+{#    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/product.css') }}">#}
+{#    <title>Product</title>#}
+{#</head>#}
+{#<body>#}
+{#<h1 id="first">Fetrisa_toy</h1>#}
+{#<div class="rt"><a#}
+{#        href="/menu">Меню</a> <a href="/menu/toys/">Игрушки</a> <a href="/menu/sets/">Наборы</a> <a href="/backet/">Корзина</a>#}
+{#        href="/menu">Меню</a> <a href="/menu/toys/">Игрушки</a> <a href="/menu/sets/">Наборы</a> <a href="/menu/backet/">Корзина</a>#}
+{#    <a href="/menu/like/">Избранное</a>#}
+{#</div>#}
+{#<div class="all">#}
+{#    <p class="thumb">#}
+{#    <div class="discripion1">#}
+{#        <p>Имя: {{ user.name}}</p>#}
+{#    <p>Email: {{ user.email }}</p>#}
+{#    <p>Фамилия: {{ user.second_name }}</p>#}
+{#    <p>Дата рождения: {{ user.birthday }}</p>#}
+{#    <p>Номер телефона: {{ user.phone }}</p>#}
+{#    </p>#}
+{#    <br>#}
+{#{% if products %}#}
+{#    <hr>#}
+{#    <p>Ваши ваказы:</p>#}
+{#    {% for product in products %}#}
+{#    <div class="card mb-3" style="max-width: 400px; margin-top: 20px;  margin-left: auto;#}
+{#    margin-right: auto;">#}
+{#                    <div class="row no-gutters">#}
+{#                        <div class="col-md-4">#}
+{#                            <img#}
+{#                                    src="{{ product.picture }}"#}
+{#                                    onclick="location.href = '{{ url_for("get_product", product_id=product.id) }}'"#}
+{#                                    class="card-img" alt="Упс" height="170">#}
+{#                        </div>#}
+{#                        <div class="col-md-8">#}
+{#                            <div class="card-body">#}
+{#                                <p class="card-title">{{ product.name }}</p>#}
+{#                                <h5 class="card-text">{{ product.discription }}</h5>#}
+{#                                    <p class="card-text"><small class="text-muted">{{ product.price }} руб.</small>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#    </div>#}
+{#        {% endfor %}#}
+{#{% endif %}#}
+{#<br>#}
+{#<br>#}
+{#    <form method="post">#}
+{#     <button type="submit" class="registerbtn">Редактировать профиль</button>#}
+{#    </form>#}
+{#</div>#}
+{#</div>#}
+{#</body>#}
+{#</html>#}

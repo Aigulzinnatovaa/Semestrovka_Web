@@ -1,0 +1,78 @@
+﻿{% extends 'base.html' %}
+    {% block body %}
+        <div class="title">
+        <h1>{{ title }}</h1>
+        </div>
+        <div class="products_1">
+        {% for i in range(ab) %}
+            <div class="products">
+                <div class="first_n_i">
+                    <div class="name">
+                        <h1>{{ products[i].name }}</h1>
+                    </div>
+                    <div class="img_pr">
+                        <img src="/static/imgs/{{ products[i].img }}">
+                    </div>
+                </div>
+                <div class="product_content">
+                    <div class="pr_2">
+                        <div class="title_pr">Вес:</div>
+                        <div class="value_pr"> {{ products[i].gramms}} гр.</div>
+                    </div>
+                    <br>
+                    <div class="pr_2">
+                        <div class="title_pr">Цена:</div>
+                        <div class="value_pr">{{ products[i].price }} ₽</div>
+                    </div>
+                    <br>
+                    <div class="pr_2">
+                        <div class="title_pr">Состав:</div>
+                        <div class="value_pr">{{ products[i].description }}</div>
+                    </div>
+                    <br>
+                    <div class="pr_2">
+                        <div class="title_pr">Пищевая ценность на 100 гр.</div>
+                        <div class="value_pr">{{ products[i].nutritional_value }}</div>
+                    </div>
+                </div>
+                <div class="product_content">
+                    <div class="amount_1">
+                        <div class="amount_2" onclick="location.href = '{{ url_for("cart_redactor_amount_product_minus", product_id=products[i].product_id) }}'">
+                            <p> - </p>
+                        </div>
+                        <div class="field">
+                            <p>Количество:</p>
+                        </div>
+                        <div class="text_1">
+                            <p>{{ amount[i] }}</p>
+                        </div>
+                        <div class="amount_2" onclick="location.href = '{{ url_for("cart_redactor_amount_product_plus", product_id=products[i].product_id) }}'">
+                            <p> + </p>
+                        </div>
+                    </div>
+                    <div class="cost_name">
+                        <div class="field">
+                            <p>Стоимость:</p>
+                        </div>
+                        <div class="text_1">
+                            <p>{{ cost[i] }} ₽</p>
+                        </div>
+                    </div>
+                    <div class="cart_3" onclick="location.href = '{{ url_for("get_product_cart_delete", product_id = products[i].product_id) }}'">
+                        <p>Удалить из корзины</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="all_cost" style="margin-left: 8px">
+            <div class="title_pr">
+                <p>Стоимость:</p>
+            </div>
+            <div class="value_pr">
+                <p>{{ cost_all }} ₽</p>
+            </div>
+            <div class="order_button_in_cart_1" onclick="location.href = '{{ url_for('order_list') }}'">
+                <button style="font-size: 20px">Оформить заказ</>
+            </div>
+        </div>
+    {% endblock %}
